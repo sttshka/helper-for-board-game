@@ -94,7 +94,7 @@ watchEffect(() => {
 
 const confirm = useConfirm();
 
-const confirmDelete = (event) => {
+const confirmDelete = (event: any) => {
   confirm.require({
     target: event.currentTarget,
     message: 'Точно удалить?',
