@@ -16,7 +16,7 @@ import { Characteristics, IPlayer, IResult } from '../../types';
 
 const props = defineProps<{
   players: IPlayer[];
-  results: IResult[];
+  results: IResult[] | undefined;
 }>();
 
 const visible = ref(false);

@@ -25,7 +25,7 @@ import { updateFirestoreDocument } from '../../firebase';
 
 const isVisible = ref(false);
 
-defineProps<{ results: IResult[] | null }>();
+defineProps<{ results: IResult[] | undefined }>();
 
 const emit = defineEmits<{
   (e: 'clear-players'): void;

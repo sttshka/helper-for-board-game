@@ -20,6 +20,7 @@ export const getFirestoreConverter = <T>() => {
     fromFirestore(snapshot, options) {
       return snapshot.data(options) as T;
     },
+    // @ts-ignore
     toFirestore(model: T) {
       return model;
     }
