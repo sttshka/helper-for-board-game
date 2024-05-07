@@ -12,3 +12,9 @@ export interface IPlayer {
   color: string;
   characteristics: ICharacteristic[];
 }
+
+export interface IResult {
+  name: Characteristics;
+  title: string;
+  values: Record<number, string>;
+}

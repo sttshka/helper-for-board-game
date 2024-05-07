@@ -1,5 +1,10 @@
 <template>
-  <Button label="Добавить гаврика в игру" @click="visible = true" />
+  <Button @click="visible = true">
+    <div class="flex gap-2 items-center">
+      <span class="hidden md:block">Добавить гаврика в игру</span>
+      <i class="pi pi-plus"></i>
+    </div>
+  </Button>
 
   <Dialog v-model:visible="visible" modal header="Создание гаврика" :style="{ width: '25rem' }">
     <form @submit.prevent>
@@ -79,23 +84,23 @@ const player = ref<IPlayer>({
 function getDefaultCharacteristics() {
   return [
     {
-      title: 'Здоровье',
-      name: Characteristics.HEALTH,
-      value: 0
-    },
-    {
       title: 'Ловкость',
       name: Characteristics.AGILITY,
       value: 0
     },
     {
-      title: 'Сила',
-      name: Characteristics.STRENGTH,
+      title: 'Харизма',
+      name: Characteristics.CHARISMA,
       value: 0
     },
     {
-      title: 'Харизма',
-      name: Characteristics.CHARISMA,
+      title: 'Здоровье',
+      name: Characteristics.HEALTH,
+      value: 0
+    },
+    {
+      title: 'Сила',
+      name: Characteristics.STRENGTH,
       value: 0
     }
   ];

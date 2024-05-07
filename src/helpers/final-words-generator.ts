@@ -1,11 +1,11 @@
 import { Characteristics, IPlayer } from '../types';
 
-export const finalWordsGenerator = (players: IPlayer[]) => {
+export const finalWordsGenerator = (players: IPlayer[]): [string[]] => {
   players = Array.from(players);
   if (players === null || players.length === 0) {
     return [['No players found!']];
   }
-  console.log(players);
+
   const messages = players.map((player) => {
     return player.characteristics.map((characteristic) => {
       if (characteristic.name === Characteristics.HEALTH) {
@@ -30,13 +30,13 @@ export const finalWordsGenerator = (players: IPlayer[]) => {
           case 0:
             return `${player.name} был хилым, весь день лежал на диване и не мог подняться с места.`;
           case 1:
-            return `Сильным ${player.name} назвать трудно, даже ложку он поднимал с трудом.`;
+            return `${player.name} даже ложку он поднимал с трудом.`;
           case 2:
             return `${player.name} был средне силён, мог поднять стул, но не мог сдвинуть диван.`;
           case 3:
             return `${player.name} был силён, мог поднять тяжелый ящик, но не мог сдвинуть стену.`;
           case 4:
-            return `${player.name} Иван был самым сильным, мог поднять целый дом, и никто не мог его остановить.`;
+            return `${player.name} был самым сильным, мог поднять целый дом, и никто не мог его остановить.`;
           default:
             return `В детстве ${player.name} был потерян в лесу и растерзан волками`;
         }
@@ -53,7 +53,7 @@ export const finalWordsGenerator = (players: IPlayer[]) => {
           case 3:
             return `${player.name} был ловким, мог бежать быстро и прыгать высоко, но не мог делать сложные трюки.`;
           case 4:
-            return `${player.name} Иван был самым ловким, мог делать сложные трюки и бежать быстрее ветра.`;
+            return `${player.name} был самым ловким, мог делать сложные трюки и бежать быстрее ветра.`;
           default:
             return `В начальной школе ${player.name} наклонился, чтобы поднять карандаш и упал на него. Дальше о нем никто не слышал`;
         }
